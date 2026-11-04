@@ -1,148 +1,393 @@
+  
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mirada | Lentes con estilo</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tienda especializada en pantallas para celulares.">
+
+    <title>SCREENLAB | Pantallas para celulares</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- ENLACE AL CSS -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+
+    <!-- ENLACE AL JAVASCRIPT -->
+    <script src="../JavaScript/script.js" defer></script>
 </head>
+
 <body>
-  <div class="promo-bar">Envío gratis y devoluciones en 30 días · Prueba 5 monturas en casa gratis</div>
 
-  <header class="header">
-    <div class="container header__inner">
-      <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
-      <a href="#" class="logo">MIRADA</a>
-      <nav class="nav" id="nav">
-        <a href="#catalogo" data-cat="optico">Lentes ópticos</a>
-        <a href="#catalogo" data-cat="sol">Lentes de sol</a>
-        <a href="#prueba">Prueba en casa</a>
-        <a href="#quiz">Quiz de estilo</a>
-      </nav>
-      <div class="header__actions">
-        <input type="search" id="search" placeholder="Buscar monturas..." />
-        <button class="icon-btn" id="homeTryBtn" title="Prueba en casa">
-          👓 <span class="badge" id="tryCount">0</span>
+    <div class="announcement">
+        ENVÍOS DISPONIBLES · CALIDAD Y GARANTÍA EN CADA PANTALLA
+    </div>
+
+    <header>
+
+        <a href="#" class="logo">
+            SCREEN<span>LAB.</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+            ☰
         </button>
-        <button class="icon-btn" id="cartBtn" title="Carrito">
-          🛒 <span class="badge" id="cartCount">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <h1>Lentes que se ven bien.<br />Precios que se sienten mejor.</h1>
-          <p>Monturas diseñadas por nosotros, con lentes graduados desde $95.</p>
-          <div class="hero__cta">
-            <a href="#catalogo" class="btn btn--primary">Comprar ahora</a>
-            <a href="#prueba" class="btn btn--outline">Prueba en casa gratis</a>
-          </div>
+        <nav id="nav">
+            <a href="#">INICIO</a>
+            <a href="#catalogo">PRODUCTOS</a>
+            <a href="#nosotros">NOSOTROS</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="#catalogo">BUSCAR ↗</a>
         </div>
-        <div class="hero__visual" id="heroVisual"></div>
-      </div>
-    </section>
 
-    <section class="features container">
-      <div class="feature"><span>🚚</span><h3>Envío gratis</h3><p>En todos los pedidos, ida y vuelta.</p></div>
-      <div class="feature"><span>🏠</span><h3>Prueba en casa</h3><p>5 monturas, 5 días, sin costo.</p></div>
-      <div class="feature"><span>💙</span><h3>Compra uno, dona uno</h3><p>Por cada par vendido, donamos otro.</p></div>
-    </section>
+    </header>
 
-    <section id="catalogo" class="catalog container">
-      <div class="catalog__head">
-        <h2 id="catalogTitle">Todas las monturas</h2>
-        <div class="tabs">
-          <button class="tab active" data-cat="all">Todas</button>
-          <button class="tab" data-cat="optico">Ópticos</button>
-          <button class="tab" data-cat="sol">Sol</button>
+    <main>
+
+        <!-- PORTADA -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    TECNOLOGÍA · PRECISIÓN · CALIDAD
+                </span>
+
+                <h1>
+                    Tu celular merece una nueva pantalla.
+                </h1>
+
+                <p>
+                    Encuentra pantallas LCD y OLED para diferentes
+                    modelos de celulares. Calidad, compatibilidad
+                    y atención personalizada en un solo lugar.
+                </p>
+
+                <div class="actions">
+
+                    <a href="#catalogo" class="btn">
+                        EXPLORAR PRODUCTOS
+                    </a>
+
+                    <a href="#nosotros" class="btn btn-outline">
+                        CONOCER MÁS
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image"></div>
+
+        </section>
+
+        <!-- BENEFICIOS -->
+
+        <section class="benefits">
+
+            <div class="benefit">
+                ✦ CALIDAD SELECCIONADA
+                <span>Productos revisados antes del envío</span>
+            </div>
+
+            <div class="benefit">
+                ✦ ATENCIÓN PERSONALIZADA
+                <span>Te ayudamos a elegir tu pantalla</span>
+            </div>
+
+            <div class="benefit">
+                ✦ COMPRA SEGURA
+                <span>Consulta disponibilidad y garantía</span>
+            </div>
+
+        </section>
+
+        <!-- CATÁLOGO -->
+
+        <section class="catalog" id="catalogo">
+
+            <div class="section-top">
+
+                <span class="eyebrow">
+                    NUESTRA COLECCIÓN
+                </span>
+
+                <h2>Encuentra tu pantalla</h2>
+
+                <p>
+                    Soluciones para devolverle vida a tu dispositivo.
+                </p>
+
+            </div>
+
+            <!-- BUSCADOR Y FILTROS -->
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Buscar modelo de celular..."
+                >
+
+                <select id="brand">
+                    <option value="all">Todas las marcas</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Motorola">Motorola</option>
+                </select>
+
+                <select id="type">
+                    <option value="all">Todos los tipos</option>
+                    <option value="LCD">LCD</option>
+                    <option value="OLED">OLED</option>
+                    <option value="AMOLED">AMOLED</option>
+                </select>
+
+            </div>
+
+            <!-- PRODUCTOS -->
+
+            <div class="products" id="products">
+
+                <article class="product"
+                    data-brand="Samsung"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">MÁS VENDIDO</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                            alt="Pantalla Samsung A04"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>SAMSUNG · LCD</small>
+
+                        <h3>Pantalla Samsung A04</h3>
+
+                        <p>
+                            Repuesto compatible para Samsung Galaxy A04.
+                        </p>
+
+                        <div class="price">Bs 180</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Samsung A04">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Apple"
+                    data-type="OLED">
+
+                    <div class="product-image">
+                        <span class="tag">CALIDAD OLED</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"
+                            alt="Pantalla iPhone 11"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>APPLE · OLED</small>
+
+                        <h3>Pantalla iPhone 11</h3>
+
+                        <p>
+                            Repuesto para iPhone 11. Consultar versión.
+                        </p>
+
+                        <div class="price">Bs 350</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla iPhone 11">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Xiaomi"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">DISPONIBLE</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+                            alt="Pantalla Xiaomi Redmi Note 10"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>XIAOMI · LCD</small>
+
+                        <h3>Redmi Note 10</h3>
+
+                        <p>
+                            Repuesto compatible. Verificar variante.
+                        </p>
+
+                        <div class="price">Bs 220</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Redmi Note 10">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Motorola"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">CALIDAD</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500"
+                            alt="Pantalla Motorola G"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>MOTOROLA · LCD</small>
+
+                        <h3>Moto G Series</h3>
+
+                        <p>
+                            Consulta el modelo exacto de tu dispositivo.
+                        </p>
+
+                        <div class="price">Bs 200</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Motorola G Series">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="noResults" class="empty" hidden>
+                No encontramos productos con esos filtros.
+            </p>
+
+        </section>
+
+        <!-- PROMOCIÓN -->
+
+        <section class="promo" id="nosotros">
+
+            <div class="promo-content">
+
+                <span class="eyebrow">
+                    COMPRA INTELIGENTE
+                </span>
+
+                <h2>
+                    La pantalla correcta hace la diferencia.
+                </h2>
+
+                <p>
+                    No todas las pantallas son iguales.
+                    Te ayudamos a identificar el repuesto adecuado
+                    según el modelo, la versión y la tecnología
+                    de tu celular.
+                </p>
+
+                <a href="#contacto" class="btn">
+                    SOLICITAR ASESORAMIENTO
+                </a>
+
+            </div>
+
+            <div class="promo-image"></div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer id="contacto">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3 class="logo">
+                    SCREEN<span class="logo-footer">LAB.</span>
+                </h3>
+
+                <p>
+                    Especialistas en pantallas y repuestos para celulares.
+                    Tecnología y calidad para mantener tus dispositivos
+                    en funcionamiento.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>EXPLORAR</h3>
+
+                <a href="#">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#nosotros">Nosotros</a>
+
+            </div>
+
+            <div>
+
+                <h3>CONTACTO</h3>
+
+                <a href="https://wa.me/59170000000" target="_blank">
+                    WhatsApp
+                </a>
+
+                <a href="mailto:ventas@screenlab.com">
+                    Correo electrónico
+                </a>
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="catalog__body">
-        <aside class="filters">
-          <h4>Forma</h4>
-          <div id="shapeFilters"></div>
-          <h4>Color</h4>
-          <div id="colorFilters" class="color-filters"></div>
-          <h4>Precio máximo: $<span id="priceValue">195</span></h4>
-          <input type="range" id="priceRange" min="95" max="195" step="5" value="195" />
-          <h4>Ordenar</h4>
-          <select id="sortSelect">
-            <option value="featured">Destacados</option>
-            <option value="price-asc">Precio: menor a mayor</option>
-            <option value="price-desc">Precio: mayor a menor</option>
-            <option value="name">Nombre A-Z</option>
-          </select>
-          <button class="btn btn--link" id="clearFilters">Limpiar filtros</button>
-        </aside>
-
-        <div>
-          <p class="results-count" id="resultsCount"></p>
-          <div class="grid" id="productGrid"></div>
+        <div class="copyright">
+            © 2026 SCREENLAB. Todos los derechos reservados.
         </div>
-      </div>
-    </section>
 
-    <section id="prueba" class="try-home">
-      <div class="container try-home__inner">
-        <div>
-          <h2>Prueba en casa, gratis</h2>
-          <ol>
-            <li>Elige 5 monturas con el botón 👓</li>
-            <li>Pruébalas durante 5 días</li>
-            <li>Devuélvelas con la etiqueta prepagada</li>
-          </ol>
-          <button class="btn btn--primary" id="openTryHome">Ver mis monturas</button>
-        </div>
-        <div class="try-slots" id="trySlots"></div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="quiz" class="quiz container">
-      <h2>¿No sabes cuál elegir?</h2>
-      <p>Responde 3 preguntas y te recomendamos monturas.</p>
-      <div class="quiz__box" id="quizBox"></div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div><strong class="logo">MIRADA</strong><p>Lentes con conciencia desde 2026.</p></div>
-      <div><h4>Tienda</h4><a href="#">Ópticos</a><a href="#">Sol</a><a href="#">Tarjetas regalo</a></div>
-      <div><h4>Ayuda</h4><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div>
-      <form class="newsletter" id="newsletter">
-        <h4>Recibe novedades</h4>
-        <input type="email" placeholder="tu@email.com" required />
-        <button class="btn btn--primary">Suscribirme</button>
-      </form>
-    </div>
-  </footer>
-
-  <!-- Modal de producto -->
-  <div class="modal" id="productModal" aria-hidden="true">
-    <div class="modal__content">
-      <button class="modal__close" data-close>&times;</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <!-- Carrito / Prueba en casa (drawer) -->
-  <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="drawer">
-    <div class="drawer__head">
-      <h3 id="drawerTitle">Tu carrito</h3>
-      <button class="modal__close" id="closeDrawer">&times;</button>
-    </div>
-    <div class="drawer__items" id="drawerItems"></div>
-    <div class="drawer__foot" id="drawerFoot"></div>
-  </aside>
-
-  <div class="toast" id="toast"></div>
-
-  <script src="app.js"></script>
 </body>
 </html>
