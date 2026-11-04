@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirada | Lentes con estilo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="promo-bar">Envío gratis y devoluciones en 30 días · Prueba 5 monturas en casa gratis</div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+      <a href="#" class="logo">MIRADA</a>
+      <nav class="nav" id="nav">
+        <a href="#catalogo" data-cat="optico">Lentes ópticos</a>
+        <a href="#catalogo" data-cat="sol">Lentes de sol</a>
+        <a href="#prueba">Prueba en casa</a>
+        <a href="#quiz">Quiz de estilo</a>
+      </nav>
+      <div class="header__actions">
+        <input type="search" id="search" placeholder="Buscar monturas..." />
+        <button class="icon-btn" id="homeTryBtn" title="Prueba en casa">
+          👓 <span class="badge" id="tryCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" title="Carrito">
+          🛒 <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1>Lentes que se ven bien.<br />Precios que se sienten mejor.</h1>
+          <p>Monturas diseñadas por nosotros, con lentes graduados desde $95.</p>
+          <div class="hero__cta">
+            <a href="#catalogo" class="btn btn--primary">Comprar ahora</a>
+            <a href="#prueba" class="btn btn--outline">Prueba en casa gratis</a>
+          </div>
+        </div>
+        <div class="hero__visual" id="heroVisual"></div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="feature"><span>🚚</span><h3>Envío gratis</h3><p>En todos los pedidos, ida y vuelta.</p></div>
+      <div class="feature"><span>🏠</span><h3>Prueba en casa</h3><p>5 monturas, 5 días, sin costo.</p></div>
+      <div class="feature"><span>💙</span><h3>Compra uno, dona uno</h3><p>Por cada par vendido, donamos otro.</p></div>
+    </section>
+
+    <section id="catalogo" class="catalog container">
+      <div class="catalog__head">
+        <h2 id="catalogTitle">Todas las monturas</h2>
+        <div class="tabs">
+          <button class="tab active" data-cat="all">Todas</button>
+          <button class="tab" data-cat="optico">Ópticos</button>
+          <button class="tab" data-cat="sol">Sol</button>
+        </div>
+      </div>
+
+      <div class="catalog__body">
+        <aside class="filters">
+          <h4>Forma</h4>
+          <div id="shapeFilters"></div>
+          <h4>Color</h4>
+          <div id="colorFilters" class="color-filters"></div>
+          <h4>Precio máximo: $<span id="priceValue">195</span></h4>
+          <input type="range" id="priceRange" min="95" max="195" step="5" value="195" />
+          <h4>Ordenar</h4>
+          <select id="sortSelect">
+            <option value="featured">Destacados</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="name">Nombre A-Z</option>
+          </select>
+          <button class="btn btn--link" id="clearFilters">Limpiar filtros</button>
+        </aside>
+
+        <div>
+          <p class="results-count" id="resultsCount"></p>
+          <div class="grid" id="productGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prueba" class="try-home">
+      <div class="container try-home__inner">
+        <div>
+          <h2>Prueba en casa, gratis</h2>
+          <ol>
+            <li>Elige 5 monturas con el botón 👓</li>
+            <li>Pruébalas durante 5 días</li>
+            <li>Devuélvelas con la etiqueta prepagada</li>
+          </ol>
+          <button class="btn btn--primary" id="openTryHome">Ver mis monturas</button>
+        </div>
+        <div class="try-slots" id="trySlots"></div>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz container">
+      <h2>¿No sabes cuál elegir?</h2>
+      <p>Responde 3 preguntas y te recomendamos monturas.</p>
+      <div class="quiz__box" id="quizBox"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><strong class="logo">MIRADA</strong><p>Lentes con conciencia desde 2026.</p></div>
+      <div><h4>Tienda</h4><a href="#">Ópticos</a><a href="#">Sol</a><a href="#">Tarjetas regalo</a></div>
+      <div><h4>Ayuda</h4><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div>
+      <form class="newsletter" id="newsletter">
+        <h4>Recibe novedades</h4>
+        <input type="email" placeholder="tu@email.com" required />
+        <button class="btn btn--primary">Suscribirme</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- Modal de producto -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__content">
+      <button class="modal__close" data-close>&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Carrito / Prueba en casa (drawer) -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer__head">
+      <h3 id="drawerTitle">Tu carrito</h3>
+      <button class="modal__close" id="closeDrawer">&times;</button>
+    </div>
+    <div class="drawer__items" id="drawerItems"></div>
+    <div class="drawer__foot" id="drawerFoot"></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
