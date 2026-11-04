@@ -1,0 +1,391 @@
+    
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tienda especializada en pantallas para celulares.">
+
+    <title>SCREENLAB | Pantallas para celulares</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- ENLACE AL CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+<script src="JavaScript/script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="announcement">
+        ENVÍOS DISPONIBLES · CALIDAD Y GARANTÍA EN CADA PANTALLA
+    </div>
+
+    <header>
+
+        <a href="#" class="logo">
+            SCREEN<span>LAB.</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a href="#">INICIO</a>
+            <a href="#catalogo">PRODUCTOS</a>
+            <a href="#nosotros">NOSOTROS</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="#catalogo">BUSCAR ↗</a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    TECNOLOGÍA · PRECISIÓN · CALIDAD
+                </span>
+
+                <h1>
+                    Tu celular merece una nueva pantalla.
+                </h1>
+
+                <p>
+                    Encuentra pantallas LCD y OLED para diferentes
+                    modelos de celulares. Calidad, compatibilidad
+                    y atención personalizada en un solo lugar.
+                </p>
+
+                <div class="actions">
+
+                    <a href="#catalogo" class="btn">
+                        EXPLORAR PRODUCTOS
+                    </a>
+
+                    <a href="#nosotros" class="btn btn-outline">
+                        CONOCER MÁS
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image"></div>
+
+        </section>
+
+        <!-- BENEFICIOS -->
+
+        <section class="benefits">
+
+            <div class="benefit">
+                ✦ CALIDAD SELECCIONADA
+                <span>Productos revisados antes del envío</span>
+            </div>
+
+            <div class="benefit">
+                ✦ ATENCIÓN PERSONALIZADA
+                <span>Te ayudamos a elegir tu pantalla</span>
+            </div>
+
+            <div class="benefit">
+                ✦ COMPRA SEGURA
+                <span>Consulta disponibilidad y garantía</span>
+            </div>
+
+        </section>
+
+        <!-- CATÁLOGO -->
+
+        <section class="catalog" id="catalogo">
+
+            <div class="section-top">
+
+                <span class="eyebrow">
+                    NUESTRA COLECCIÓN
+                </span>
+
+                <h2>Encuentra tu pantalla</h2>
+
+                <p>
+                    Soluciones para devolverle vida a tu dispositivo.
+                </p>
+
+            </div>
+
+            <!-- BUSCADOR Y FILTROS -->
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Buscar modelo de celular..."
+                >
+
+                <select id="brand">
+                    <option value="all">Todas las marcas</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Motorola">Motorola</option>
+                </select>
+
+                <select id="type">
+                    <option value="all">Todos los tipos</option>
+                    <option value="LCD">LCD</option>
+                    <option value="OLED">OLED</option>
+                    <option value="AMOLED">AMOLED</option>
+                </select>
+
+            </div>
+
+            <!-- PRODUCTOS -->
+
+            <div class="products" id="products">
+
+                <article class="product"
+                    data-brand="Samsung"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">MÁS VENDIDO</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                            alt="Pantalla Samsung A04"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>SAMSUNG · LCD</small>
+
+                        <h3>Pantalla Samsung A04</h3>
+
+                        <p>
+                            Repuesto compatible para Samsung Galaxy A04.
+                        </p>
+
+                        <div class="price">Bs 180</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Samsung A04">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Apple"
+                    data-type="OLED">
+
+                    <div class="product-image">
+                        <span class="tag">CALIDAD OLED</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"
+                            alt="Pantalla iPhone 11"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>APPLE · OLED</small>
+
+                        <h3>Pantalla iPhone 11</h3>
+
+                        <p>
+                            Repuesto para iPhone 11. Consultar versión.
+                        </p>
+
+                        <div class="price">Bs 350</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla iPhone 11">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Xiaomi"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">DISPONIBLE</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+                            alt="Pantalla Xiaomi Redmi Note 10"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>XIAOMI · LCD</small>
+
+                        <h3>Redmi Note 10</h3>
+
+                        <p>
+                            Repuesto compatible. Verificar variante.
+                        </p>
+
+                        <div class="price">Bs 220</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Redmi Note 10">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="product"
+                    data-brand="Motorola"
+                    data-type="LCD">
+
+                    <div class="product-image">
+                        <span class="tag">CALIDAD</span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500"
+                            alt="Pantalla Motorola G"
+                        >
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>MOTOROLA · LCD</small>
+
+                        <h3>Moto G Series</h3>
+
+                        <p>
+                            Consulta el modelo exacto de tu dispositivo.
+                        </p>
+
+                        <div class="price">Bs 200</div>
+
+                        <a href="#" class="buy"
+                            data-product="Pantalla Motorola G Series">
+                            CONSULTAR PRODUCTO ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="noResults" class="empty" hidden>
+                No encontramos productos con esos filtros.
+            </p>
+
+        </section>
+
+        <!-- PROMOCIÓN -->
+
+        <section class="promo" id="nosotros">
+
+            <div class="promo-content">
+
+                <span class="eyebrow">
+                    COMPRA INTELIGENTE
+                </span>
+
+                <h2>
+                    La pantalla correcta hace la diferencia.
+                </h2>
+
+                <p>
+                    No todas las pantallas son iguales.
+                    Te ayudamos a identificar el repuesto adecuado
+                    según el modelo, la versión y la tecnología
+                    de tu celular.
+                </p>
+
+                <a href="#contacto" class="btn">
+                    SOLICITAR ASESORAMIENTO
+                </a>
+
+            </div>
+
+            <div class="promo-image"></div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer id="contacto">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3 class="logo">
+                    SCREEN<span class="logo-footer">LAB.</span>
+                </h3>
+
+                <p>
+                    Especialistas en pantallas y repuestos para celulares.
+                    Tecnología y calidad para mantener tus dispositivos
+                    en funcionamiento.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>EXPLORAR</h3>
+
+                <a href="#">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#nosotros">Nosotros</a>
+
+            </div>
+
+            <div>
+
+                <h3>CONTACTO</h3>
+
+                <a href="https://wa.me/59170000000" target="_blank">
+                    WhatsApp
+                </a>
+
+                <a href="mailto:ventas@screenlab.com">
+                    Correo electrónico
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 SCREENLAB. Todos los derechos reservados.
+        </div>
+
+    </footer>
+
+</body>
+</html>
