@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CAMBIA ESTE NÚMERO POR TU WHATSAPP REAL
     // Formato internacional: país + número, sin + ni espacios.
 
-    const whatsappNumber = "59170000000";
+    const whatsappNumber = "59170036675";
 
     function sendWhatsApp(product) {
 
