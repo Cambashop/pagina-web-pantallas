@@ -110,219 +110,203 @@
             </div>
 
         </section>
+    
+<!-- CATÁLOGO -->
+<section class="catalog" id="catalogo">
 
-        <!-- CATÁLOGO -->
+    <div class="section-top">
+        <span class="eyebrow">NUESTRA COLECCIÓN</span>
+        <h2>Encuentra tu pantalla</h2>
+        <p>Soluciones para devolverle vida a tu dispositivo.</p>
+    </div>
 
-        <section class="catalog" id="catalogo">
+    <!-- BUSCADOR Y FILTROS -->
+    <div class="filters">
 
-            <div class="section-top">
+        <input
+            type="search"
+            id="search"
+            placeholder="Buscar modelo, marca o tecnología..."
+            aria-label="Buscar productos"
+        >
 
-                <span class="eyebrow">
-                    NUESTRA COLECCIÓN
-                </span>
+        <select id="brand" aria-label="Filtrar por marca">
+            <option value="all">Todas las marcas</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Apple">Apple</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Motorola">Motorola</option>
+        </select>
 
-                <h2>Encuentra tu pantalla</h2>
+        <select id="type" aria-label="Filtrar por tecnología">
+            <option value="all">Todos los tipos</option>
+            <option value="LCD">LCD</option>
+            <option value="OLED">OLED</option>
+            <option value="AMOLED">AMOLED</option>
+        </select>
 
-                <p>
-                    Soluciones para devolverle vida a tu dispositivo.
-                </p>
+    </div>
 
+    <div class="catalog-results">
+        <span id="resultCount">4 productos disponibles</span>
+        <button type="button" id="clearFilters">Limpiar filtros</button>
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div class="products" id="products">
+
+        <article class="product"
+            data-brand="Samsung"
+            data-type="LCD"
+            data-name="Pantalla Samsung A04"
+            data-model="Galaxy A04"
+            data-description="Módulo de pantalla de reemplazo para Samsung Galaxy A04. Confirma la versión exacta antes de comprar."
+            data-price="180">
+
+            <div class="product-image">
+                <span class="tag">MÁS VENDIDO</span>
+                <img
+                    src="https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/galaxy-a04-lcd-screen-display-module-1000x1000.jpg"
+                    alt="Módulo de pantalla Samsung Galaxy A04"
+                    loading="lazy">
             </div>
 
-            <!-- BUSCADOR Y FILTROS -->
+            <div class="product-info">
+                <small>SAMSUNG · LCD</small>
+                <h3>Pantalla Samsung A04</h3>
+                <p>Repuesto para Samsung Galaxy A04.</p>
+                <div class="price">Bs 180</div>
 
-            <div class="filters">
+                <button class="buy details-btn" type="button">
+                    VER DETALLES
+                </button>
+                <button class="buy whatsapp-btn" type="button">
+                    CONSULTAR POR WHATSAPP ↗
+                </button>
+            </div>
+        </article>
 
-                <input
-                    type="search"
-                    id="search"
-                    placeholder="Buscar modelo de celular..."
-                >
+        <article class="product"
+            data-brand="Apple"
+            data-type="OLED"
+            data-name="Pantalla iPhone 11"
+            data-model="iPhone 11"
+            data-description="Pantalla de reemplazo para iPhone 11. Verifica la tecnología y la versión del repuesto antes de realizar la compra."
+            data-price="350">
 
-                <select id="brand">
-                    <option value="all">Todas las marcas</option>
-                    <option value="Samsung">Samsung</option>
-                    <option value="Apple">Apple</option>
-                    <option value="Xiaomi">Xiaomi</option>
-                    <option value="Motorola">Motorola</option>
-                </select>
-
-                <select id="type">
-                    <option value="all">Todos los tipos</option>
-                    <option value="LCD">LCD</option>
-                    <option value="OLED">OLED</option>
-                    <option value="AMOLED">AMOLED</option>
-                </select>
-
+            <div class="product-image">
+                <span class="tag">CALIDAD OLED</span>
+                <img
+                    src="https://repairpartsusa.com/cdn/shop/products/iPhone-13-incell-screen-replacement2_1024x.png?v=1664545824"
+                    alt="Imagen ilustrativa de módulo de pantalla para iPhone"
+                    loading="lazy">
             </div>
 
-            <!-- PRODUCTOS -->
+            <div class="product-info">
+                <small>APPLE · OLED</small>
+                <h3>Pantalla iPhone 11</h3>
+                <p>Consultar versión y tecnología disponible.</p>
+                <div class="price">Bs 350</div>
 
-            <div class="products" id="products">
+                <button class="buy details-btn" type="button">
+                    VER DETALLES
+                </button>
+                <button class="buy whatsapp-btn" type="button">
+                    CONSULTAR POR WHATSAPP ↗
+                </button>
+            </div>
+        </article>
 
-                <!-- SAMSUNG -->
+        <article class="product"
+            data-brand="Xiaomi"
+            data-type="LCD"
+            data-name="Pantalla Redmi Note 10"
+            data-model="Redmi Note 10"
+            data-description="Módulo de pantalla para Xiaomi Redmi Note 10. Comprueba la variante exacta de tu dispositivo."
+            data-price="220">
 
-                <article class="product"
-                    data-brand="Samsung"
-                    data-type="LCD">
-
-                    <div class="product-image">
-
-                        <span class="tag">MÁS VENDIDO</span>
-
-                        <img
-                            src="https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/galaxy-a04-lcd-screen-display-module-1000x1000.jpg"
-                            alt="Módulo de pantalla LCD Samsung Galaxy A04"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <small>SAMSUNG · LCD</small>
-
-                        <h3>Pantalla Samsung A04</h3>
-
-                        <p>
-                            Repuesto compatible para Samsung Galaxy A04.
-                        </p>
-
-                        <div class="price">Bs 180</div>
-
-                        <a href="#" class="buy"
-                            data-product="Pantalla Samsung A04">
-                            CONSULTAR PRODUCTO ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <!-- IPHONE -->
-
-                <article class="product"
-                    data-brand="Apple"
-                    data-type="OLED">
-
-                    <div class="product-image">
-
-                        <span class="tag">CALIDAD OLED</span>
-
-                        <img
-                            src="https://repairpartsusa.com/cdn/shop/products/iPhone-13-incell-screen-replacement2_1024x.png?v=1664545824"
-                            alt="Módulo de pantalla de reemplazo para iPhone, imagen ilustrativa"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <small>APPLE · OLED</small>
-
-                        <h3>Pantalla iPhone 11</h3>
-
-                        <p>
-                            Repuesto para iPhone 11. Consultar versión.
-                        </p>
-
-                        <div class="price">Bs 350</div>
-
-                        <a href="#" class="buy"
-                            data-product="Pantalla iPhone 11">
-                            CONSULTAR PRODUCTO ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <!-- XIAOMI -->
-
-                <article class="product"
-                    data-brand="Xiaomi"
-                    data-type="LCD">
-
-                    <div class="product-image">
-
-                        <span class="tag">DISPONIBLE</span>
-
-                        <img
-                            src="https://acdn.mitiendanube.com/stores/356/280/products/5518-modulo-xiaomi-redmi-note-10-10s-negro-11-97134fd2e60a79150c16668965495320-640-0.jpg"
-                            alt="Módulo de pantalla Xiaomi Redmi Note 10"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <small>XIAOMI · LCD</small>
-
-                        <h3>Redmi Note 10</h3>
-
-                        <p>
-                            Repuesto compatible. Verificar variante.
-                        </p>
-
-                        <div class="price">Bs 220</div>
-
-                        <a href="#" class="buy"
-                            data-product="Pantalla Redmi Note 10">
-                            CONSULTAR PRODUCTO ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <!-- MOTOROLA -->
-
-                <article class="product"
-                    data-brand="Motorola"
-                    data-type="LCD">
-
-                    <div class="product-image">
-
-                        <span class="tag">CALIDAD</span>
-
-                        <img
-                            src="https://acdn-us.mitiendanube.com/stores/288/942/products/4760-modulo-motorola-moto-g8-power-lite-xt2055_11-6f1113d531d7d4a39716097869694058-640-0.webp"
-                            alt="Módulo de pantalla Motorola Moto G8 Power Lite"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <small>MOTOROLA · LCD</small>
-
-                        <h3>Moto G Series</h3>
-
-                        <p>
-                            Consulta el modelo exacto de tu dispositivo.
-                        </p>
-
-                        <div class="price">Bs 200</div>
-
-                        <a href="#" class="buy"
-                            data-product="Pantalla Motorola G Series">
-                            CONSULTAR PRODUCTO ↗
-                        </a>
-
-                    </div>
-
-                </article>
-
+            <div class="product-image">
+                <span class="tag">DISPONIBLE</span>
+                <img
+                    src="https://acdn.mitiendanube.com/stores/356/280/products/5518-modulo-xiaomi-redmi-note-10-10s-negro-11-97134fd2e60a79150c16668965495320-640-0.jpg"
+                    alt="Módulo de pantalla Xiaomi Redmi Note 10"
+                    loading="lazy">
             </div>
 
-            <p id="noResults" class="empty" hidden>
-                No encontramos productos con esos filtros.
-            </p>
+            <div class="product-info">
+                <small>XIAOMI · LCD</small>
+                <h3>Redmi Note 10</h3>
+                <p>Repuesto compatible. Verificar variante.</p>
+                <div class="price">Bs 220</div>
 
-        </section>
+                <button class="buy details-btn" type="button">
+                    VER DETALLES
+                </button>
+                <button class="buy whatsapp-btn" type="button">
+                    CONSULTAR POR WHATSAPP ↗
+                </button>
+            </div>
+        </article>
+
+        <article class="product"
+            data-brand="Motorola"
+            data-type="LCD"
+            data-name="Pantalla Motorola Moto G"
+            data-model="Moto G Series"
+            data-description="Pantalla de reemplazo para la familia Motorola Moto G. Es necesario confirmar el modelo exacto antes de comprar."
+            data-price="200">
+
+            <div class="product-image">
+                <span class="tag">CALIDAD</span>
+                <img
+                    src="https://acdn-us.mitiendanube.com/stores/288/942/products/4760-modulo-motorola-moto-g8-power-lite-xt2055_11-6f1113d531d7d4a39716097869694058-640-0.webp"
+                    alt="Módulo de pantalla Motorola Moto G8 Power Lite"
+                    loading="lazy">
+            </div>
+
+            <div class="product-info">
+                <small>MOTOROLA · LCD</small>
+                <h3>Moto G Series</h3>
+                <p>Consulta el modelo exacto de tu dispositivo.</p>
+                <div class="price">Bs 200</div>
+
+                <button class="buy details-btn" type="button">
+                    VER DETALLES
+                </button>
+                <button class="buy whatsapp-btn" type="button">
+                    CONSULTAR POR WHATSAPP ↗
+                </button>
+            </div>
+        </article>
+
+    </div>
+
+    <p id="noResults" class="empty" hidden>
+        No encontramos productos con esos filtros.
+    </p>
+
+    <!-- VENTANA DE DETALLES -->
+    <div class="product-modal" id="productModal" aria-hidden="true">
+        <div class="modal-content" role="dialog"
+            aria-modal="true" aria-labelledby="modalTitle">
+
+            <button type="button" class="modal-close"
+                id="closeModal" aria-label="Cerrar">×</button>
+
+            <span class="eyebrow">DETALLES DEL PRODUCTO</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalTechnology"></p>
+            <strong id="modalPrice"></strong>
+
+            <button type="button" class="btn" id="modalWhatsApp">
+                CONSULTAR POR WHATSAPP
+            </button>
+        </div>
+    </div>
+
+</section>
+
 
         <!-- PROMOCIÓN -->
 
