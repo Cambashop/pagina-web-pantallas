@@ -1,4 +1,4 @@
-     
+    
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==================================
@@ -34,18 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function filterProducts() {
 
-        const searchText = search.value.toLowerCase().trim();
-        const selectedBrand = brand.value;
-        const selectedType = type.value;
+        const searchText = search ? search.value.toLowerCase().trim() : "";
+        const selectedBrand = brand ? brand.value : "all";
+        const selectedType = type ? type.value : "all";
 
         let visibleProducts = 0;
 
         products.forEach(product => {
 
-            const name = product.dataset.name.toLowerCase();
-            const model = product.dataset.model.toLowerCase();
-            const productBrand = product.dataset.brand;
-            const productType = product.dataset.type;
+            const name = (product.dataset.name || "").toLowerCase();
+            const model = (product.dataset.model || "").toLowerCase();
+            const productBrand = product.dataset.brand || "";
+            const productType = product.dataset.type || "";
 
             const matchesSearch =
                 name.includes(searchText) ||
@@ -72,22 +72,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        noResults.hidden = visibleProducts !== 0;
+        if (noResults) {
+            noResults.hidden = visibleProducts !== 0;
+        }
 
-        resultCount.textContent =
-            `${visibleProducts} producto${visibleProducts !== 1 ? "s" : ""} encontrado${visibleProducts !== 1 ? "s" : ""}`;
+        if (resultCount) {
+            resultCount.textContent =
+                `${visibleProducts} producto${visibleProducts !== 1 ? "s" : ""} encontrado${visibleProducts !== 1 ? "s" : ""}`;
+        }
     }
 
-    search.addEventListener("input", filterProducts);
-    brand.addEventListener("change", filterProducts);
-    type.addEventListener("change", filterProducts);
+    if (search) search.addEventListener("input", filterProducts);
+    if (brand) brand.addEventListener("change", filterProducts);
+    if (type) type.addEventListener("change", filterProducts);
 
-    clearFilters.addEventListener("click", () => {
-        search.value = "";
-        brand.value = "all";
-        type.value = "all";
-        filterProducts();
-    });
+    if (clearFilters) {
+        clearFilters.addEventListener("click", () => {
+            if (search) search.value = "";
+            if (brand) brand.value = "all";
+            if (type) type.value = "all";
+
+            filterProducts();
+        });
+    }
 
     // ==================================
     // VENTANA DE DETALLES
@@ -106,25 +113,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openProductModal(product) {
 
+        if (!product || !modal) return;
+
         selectedProduct = product;
 
-        modalTitle.textContent = product.dataset.name;
-        modalDescription.textContent = product.dataset.description;
-        modalTechnology.textContent =
-            `Marca: ${product.dataset.brand} · Tecnología: ${product.dataset.type}`;
+        if (modalTitle) {
+            modalTitle.textContent = product.dataset.name || "Producto SCREENLAB";
+        }
 
-        modalPrice.textContent =
-            `Bs ${product.dataset.price}`;
+        if (modalDescription) {
+            modalDescription.textContent = product.dataset.description || "";
+        }
+
+        if (modalTechnology) {
+            modalTechnology.textContent =
+                `Marca: ${product.dataset.brand || ""} · Tecnología: ${product.dataset.type || ""}`;
+        }
+
+        if (modalPrice) {
+            modalPrice.textContent = `Bs ${product.dataset.price || "Consultar"}`;
+        }
 
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
 
-        closeModal.focus();
+        if (closeModal) closeModal.focus();
     }
 
     function closeProductModal() {
+
+        if (!modal) return;
+
         modal.classList.remove("active");
         modal.setAttribute("aria-hidden", "true");
+
         selectedProduct = null;
     }
 
@@ -140,86 +162,83 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    closeModal.addEventListener("click", closeProductModal);
+    if (closeModal) {
+        closeModal.addEventListener("click", closeProductModal);
+    }
 
-    modal.addEventListener("click", event => {
-        if (event.target === modal) {
-            closeProductModal();
-        }
-    });
+    if (modal) {
+
+        modal.addEventListener("click", event => {
+
+            if (event.target === modal) {
+                closeProductModal();
+            }
+
+        });
+
+    }
 
     document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && modal.classList.contains("active")) {
+
+        if (event.key === "Escape" && modal && modal.classList.contains("active")) {
             closeProductModal();
         }
+
     });
 
     // ==================================
     // CONSULTAS POR WHATSAPP
     // ==================================
-   // WHATSAPP SCREENLAB
-// Conserva aquí tu número real, con código de Bolivia 591.
-const whatsappNumber = "59170036675";
 
-function sendWhatsApp(product) {
-    if (!product) return;
+    const whatsappNumber = "59170036675";
 
-    const name = product.dataset.name || "Producto SCREENLAB";
-    const price = product.dataset.price || "Consultar";
+    function sendWhatsApp(product) {
 
-    const message =
-        `Hola, SCREENLAB. Quiero consultar por: ${name}. ` +
-        `Precio publicado: Bs ${price}. ` +
-        `¿Tienen disponibilidad?`;
+        if (!product) return;
 
-    const url =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        const name = product.dataset.name || "Producto SCREENLAB";
+        const price = product.dataset.price || "Consultar";
+        const model = product.dataset.model || "";
 
-    window.location.href = url;
-}
+        const message =
+            `Hola, SCREENLAB. Quiero consultar por: ${name}. ` +
+            `Modelo: ${model}. ` +
+            `Precio publicado: Bs ${price}. ` +
+            `¿Tienen disponibilidad?`;
 
-// Detectar los botones de WhatsApp de todos los productos
-document.addEventListener("click", function(event) {
+        const url =
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    const whatsappButton = event.target.closest(".whatsapp-btn");
-
-    if (whatsappButton) {
-        const product = whatsappButton.closest(".product");
-        sendWhatsApp(product);
-        return;
+        window.location.href = url;
     }
 
-    // Botón de WhatsApp dentro de la ventana de detalles
-    const modalButton = event.target.closest("#modalWhatsApp");
+    // Botones de WhatsApp de los productos
+    document.addEventListener("click", event => {
 
-    if (modalButton && selectedProduct) {
-        sendWhatsApp(selectedProduct);
-    }
+        const whatsappButton = event.target.closest(".whatsapp-btn");
 
-});
-    
-        window.open(url, "_blank", "noopener,noreferrer");
-    }
+        if (whatsappButton) {
 
-    document.querySelectorAll(".whatsapp-btn").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const product = button.closest(".product");
+            const product = whatsappButton.closest(".product");
 
             sendWhatsApp(product);
 
-        });
-
-    });
-
-    modalWhatsApp.addEventListener("click", () => {
-
-        if (selectedProduct) {
-            sendWhatsApp(selectedProduct);
         }
 
     });
+
+    // Botón de WhatsApp de la ventana de detalles
+    if (modalWhatsApp) {
+
+        modalWhatsApp.addEventListener("click", () => {
+
+            if (selectedProduct) {
+                sendWhatsApp(selectedProduct);
+            }
+
+        });
+
+    }
 
     // ==================================
     // INICIALIZACIÓN
