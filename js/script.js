@@ -157,22 +157,47 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==================================
     // CONSULTAS POR WHATSAPP
     // ==================================
+   // WHATSAPP SCREENLAB
+// Conserva aquí tu número real, con código de Bolivia 591.
+const whatsappNumber = "59170036675";
 
-    // CAMBIA ESTE NÚMERO POR TU WHATSAPP REAL
-    // Formato internacional: país + número, sin + ni espacios.
+function sendWhatsApp(product) {
+    if (!product) return;
 
-    const whatsappNumber = "59170036675";
+    const name = product.dataset.name || "Producto SCREENLAB";
+    const price = product.dataset.price || "Consultar";
 
-    function sendWhatsApp(product) {
+    const message =
+        `Hola, SCREENLAB. Quiero consultar por: ${name}. ` +
+        `Precio publicado: Bs ${price}. ` +
+        `¿Tienen disponibilidad?`;
 
-        const message =
-            `Hola, SCREENLAB. Quiero consultar por: ${product.dataset.name}. ` +
-            `Precio publicado: Bs ${product.dataset.price}. ` +
-            `¿Tienen disponibilidad y cuál es la compatibilidad exacta?`;
+    const url =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-        const url =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.location.href = url;
+}
 
+// Detectar los botones de WhatsApp de todos los productos
+document.addEventListener("click", function(event) {
+
+    const whatsappButton = event.target.closest(".whatsapp-btn");
+
+    if (whatsappButton) {
+        const product = whatsappButton.closest(".product");
+        sendWhatsApp(product);
+        return;
+    }
+
+    // Botón de WhatsApp dentro de la ventana de detalles
+    const modalButton = event.target.closest("#modalWhatsApp");
+
+    if (modalButton && selectedProduct) {
+        sendWhatsApp(selectedProduct);
+    }
+
+});
+    
         window.open(url, "_blank", "noopener,noreferrer");
     }
 
