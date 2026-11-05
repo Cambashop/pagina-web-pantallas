@@ -448,11 +448,11 @@ nav a:hover,
     margin-bottom: 28px;
 }
 
-.promo-image {
+  .promo-image {
     min-height: 350px;
     width: 100%;
     background:
-        url("https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1200")
+        url("https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1200")
         center / cover no-repeat;
     border-radius: 15px;
     box-shadow: var(--shadow);
