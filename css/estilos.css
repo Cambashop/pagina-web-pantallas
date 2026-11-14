@@ -798,6 +798,76 @@ footer {
 
     .modal-content {
         padding: 28px 22px;
+    
+    }
+}
+
+/* ==================================
+   VENTANA DE DETALLES SCREENLAB
+================================== */
+
+.product-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(10, 24, 45, 0.75);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    margin: 15px 0;
+    color: #17243a;
+}
+
+.modal-content p {
+    color: #64748b;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal-content strong {
+    display: block;
+    color: #1769e0;
+    font-size: 27px;
+    margin: 20px 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #17243a;
+}
+
+#modalWhatsApp {
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        padding: 28px 22px;
     }
 }
 
