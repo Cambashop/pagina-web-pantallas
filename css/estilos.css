@@ -871,6 +871,35 @@ footer {
         padding: 28px 22px;
     }
 }
+/* IMAGEN DEL PRODUCTO EN LA VENTANA DE DETALLES */
+
+.modal-product-image {
+    width: 100%;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f8fc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0 20px;
+    overflow: hidden;
+}
+
+.modal-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 500px) {
+    .modal-product-image {
+        height: 190px;
+    }
+}
+
+        
 
 
 
