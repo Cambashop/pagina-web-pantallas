@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.getElementById("closeModal");
 
     const modalTitle = document.getElementById("modalTitle");
+    const modalImage = document.getElementById("modalImage");
     const modalDescription = document.getElementById("modalDescription");
     const modalTechnology = document.getElementById("modalTechnology");
     const modalPrice = document.getElementById("modalPrice");
@@ -112,10 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedProduct = null;
 
     function openProductModal(product) {
+        
 
         if (!product || !modal) return;
 
         selectedProduct = product;
+        // Cargar imagen del producto seleccionado
+const productImage = product.querySelector(".product-image img");
+
+if (modalImage && productImage) {
+    modalImage.src = productImage.src;
+    modalImage.alt = productImage.alt;
+}
+        
 
         if (modalTitle) {
             modalTitle.textContent = product.dataset.name || "Producto SCREENLAB";
